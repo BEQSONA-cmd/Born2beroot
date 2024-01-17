@@ -1,55 +1,156 @@
 # Born2beroot
 42_Courses : Born2beroot (125%)
-![Alt text](<Photos/Screen Shot 2024-01-15 at 1.23.54 PM-1.png>) 
+# STEP 1 configure debian
+
+start with new VM:
+![Alt text](<Photos/Screen Shot 2024-01-15 at 1.23.54 PM-1.png>)
+
+name should be : "Born2beroot"
+and for my example i choose Oracle (64bit) for linux version
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.27.28 PM.png>) 
+
+1GB RAM is enough for this VM
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.28.08 PM.png>) 
+
+here create a virtual hard disk
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.28.58 PM.png>) 
+
+VDI cuz we have ISO file
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.29.15 PM.png>) 
+
+here we have to choose memory for allocate
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.29.33 PM.png>) 
+
+i put 30.8 cuz im doin bonus, and click "Create"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.30.03 PM.png>) 
+
+go to "settings"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.30.32 PM.png>) 
+
+"Storage" below Controller: IDE is "Empty"
+and in Optical Drive: choose a duisk file.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.31.32 PM.png>) 
+
+search ISO file for your VM and click "Open"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.32.23 PM.png>) 
+
+start your VM
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.32.48 PM.png>) 
+
+
+# STEP 2 install Debian
+
+go to "install" and follow the pictures
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.36.27 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.37.44 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.38.17 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.38.30 PM.png>) 
+
+Hostname should be your intra name + 42 for example "btvildia42"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.39.32 PM.png>) 
+
+there is no specific reason to put Domain name, so i just left it empty
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.39.47 PM.png>) 
+
+for your root password , you must to follow the "strong password policy"
+and create strong password
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.42.16 PM.png>) 
+
+i choose to put intra name here
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.42.45 PM.png>) 
+
+and same here :)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.43.42 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 1.44.58 PM.png>) 
+
+for the password for my user i choose same as my root password
+cuz i have small creativity :)
+![Alt text](<Photos/Screen Shot 2024-01-15 at 1.44.58 PM.png>)
+
+go to manual for setting partitions in manual way,
+its partition structure for bonus
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.47.58 PM.png>) 
+
+choose our VBOX HARDDISK
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.48.33 PM.png>) 
+
+Create new epmty partition table
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.48.46 PM.png>) 
+
+choose our FREE SPACE
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.49.32 PM.png>) 
+
+and create a first new partition
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.49.43 PM.png>) 
+
+as we have in subject for example it should be:
+500m Primary partition for Boot
+so follow the steps 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.57.49 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.58.03 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.58.15 PM.png>) 
+
+Mout point should be Boot
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.59.13 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.59.27 PM.png>) 
+
+click done setting up the partition and with that we create our first partition :)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.59.45 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 2.00.33 PM.png>) 
+
+now click your FREE SPACE and create other Logical partition
+![Alt text](<Photos/Screen Shot 2024-01-15 at 2.00.33 PM.png>)
+
+follow steps
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.01.03 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.01.39 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.02.53 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.03.20 PM.png>) 
+
+here choose "Do Not Mount it"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.03.44 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.04.17 PM.png>) 
+
+now we configure encrypted volumes on this partition
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.04.29 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 2.04.44 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 2.05.02 PM.png>) 
+
+
+![Alt text](<Photos/Screen Shot 2024-01-15 at 2.04.44 PM.png>)
+
+
+![Alt text](<Photos/Screen Shot 2024-01-15 at 2.05.02 PM.png>)
+
+for use "arrows" for moves, for checking click "space" check sda5 and press "Enter"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.05.19 PM.png>) 
+
+click done setting up partition here
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.06.28 PM.png>) 
+
+here finish
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.06.50 PM.png>) 
+
+and here choose yes
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.07.02 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 2.07.12 PM.png>) 
+
+you can skip this and press cancel
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.07.38 PM.png>) 
+
+for the reason of zero creativity i put same password here :)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.08.27 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 2.09.38 PM.png>) 
+
+now we gonna start to configure LVM Groop (Logical Volume Manager)
+wich should be like this (from subject)
+
+![Alt text](<Photos/Screen Shot 2024-01-15 at 2.09.38 PM.png>)
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.10.01 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.10.35 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.11.05 PM.png>) 

@@ -148,7 +148,9 @@ for the reason of zero creativity i put same password here :)
 
 now we gonna start to configure LVM Groop (Logical Volume Manager)
 wich should be like this (from subject)
+![Alt text](<Photos/Screen Shot 2024-01-17 at 1.09.35 PM.png>)
 
+so follow steps carefully 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.09.38 PM.png>)
 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.10.01 PM.png>) 
@@ -289,5 +291,4 @@ wich should be like this (from subject)
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.49.27 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.54.35 PM.png>)
 
-![Alt text](<Photos/Screen Shot 2024-01-17 at 1.09.35 PM.png>)
 

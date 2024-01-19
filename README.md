@@ -282,13 +282,5 @@ so follow steps carefully
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.39.25 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.40.09 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 3.03.49 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 3.05.14 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 3.06.45 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 3.08.53 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 3.10.57 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.41.01 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.49.27 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.54.35 PM.png>)
 
 

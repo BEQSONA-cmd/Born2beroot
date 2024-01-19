@@ -153,57 +153,132 @@ wich should be like this (from subject)
 so follow steps carefully 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.09.38 PM.png>)
 
+YES
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.10.01 PM.png>) 
+
+and here we make groups
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.10.35 PM.png>) 
+
+name it LVMGroup
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.11.05 PM.png>) 
+
+continue..
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.11.59 PM.png>) 
+
+and here we starting to make uor logical volumes, first one is "root" so start from that.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.12.12 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.12.48 PM.png>) 
+
+name will be "root" and follow the steps
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.13.11 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.13.45 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.14.42 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.14.54 PM.png>) 
+
+next one is "swap"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.15.36 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.15.54 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.17.48 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.18.02 PM.png>) 
+
+next is "home"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.18.32 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.18.51 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.19.07 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.19.19 PM.png>) 
+
+next is "var"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.19.42 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.19.58 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.20.11 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.20.25 PM.png>) 
+
+next is "srv"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.21.41 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.21.57 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.22.07 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.22.15 PM.png>) 
+
+next is "tmp"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.22.56 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.23.07 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.25.07 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.25.15 PM.png>) 
+
+and last is "var-log"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.26.17 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.26.31 PM.png>) 
+
+go to finish and now we starting to give partitions settings
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.26.45 PM.png>) 
+
+so our first one to set up is "home" so go to #1  5.0 GB
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.30.31 PM.png>) 
+
+go to use as:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.31.55 PM.png>) 
+
+and choose Ex4
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.32.12 PM.png>) 
+
+go to mount point:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.32.34 PM.png>) 
+
+and choose "/home"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.33.25 PM.png>) 
+
+go to "done setting up the partition" and now our first home partition is finished
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.33.38 PM.png>) 
+
+now lets set up settings for all partitions, so follow steps carefully :)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.35.06 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.35.27 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.35.37 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.35.48 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.36.09 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.36.20 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.37.00 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.37.41 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.37.55 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.13 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.27 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.36 PM.png>) 
+
+
+HERE CHOOSE "SWAP AREA"
+
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.51 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.39.03 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.39.25 PM.png>) 

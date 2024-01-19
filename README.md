@@ -82,6 +82,7 @@ Create new epmty partition table
 choose our FREE SPACE
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.49.32 PM.png>) 
 
+# STEP 3 SET UP PARTITIONS
 and create a first new partition
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 1.49.43 PM.png>) 
 
@@ -165,6 +166,7 @@ name it LVMGroup
 continue..
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.11.59 PM.png>) 
 
+# STEP 4 MAKE LOGICAL VOLUMES
 and here we starting to make uor logical volumes, first one is "root" so start from that.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.12.12 PM.png>) 
 
@@ -232,6 +234,7 @@ and last is "var-log"
 go to finish and now we starting to give partitions settings
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.26.45 PM.png>) 
 
+# STEP 5 SET UP SETTINGS FOR PARTITIONS
 so our first one to set up is "home" so go to #1  5.0 GB
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.30.31 PM.png>) 
 
@@ -273,51 +276,191 @@ now lets set up settings for all partitions, so follow steps carefully :)
 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.27 PM.png>) 
 
+
+HERE CHOOSE "SWAP AREA" !!!
+
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.36 PM.png>) 
 
-
-HERE CHOOSE "SWAP AREA"
-
-
+and "done setting up the partition"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.38.51 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.39.03 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.39.25 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.39.53 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.40.16 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.40.26 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.41.05 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.41.26 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.41.46 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.42.09 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.42.31 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.42.57 PM.png>) 
+
+
+
+HERE CHOOSE "ENTER MANUALLY" !!!
+
+ 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.43.12 PM.png>) 
+
+type "/var/log
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.44.22 PM.png>) 
+
+and "Done setting up the partition"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.44.37 PM.png>) 
+
+scroll down and choose Finish
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.45.05 PM.png>) 
+
+and ofc "Yes" to write our changes to disk
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.45.15 PM.png>) 
+
+here choose "No" and follow steps
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.59.20 PM.png>) 
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.59.37 PM.png>) 
+
+here choose "deb.debian.org"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 2.59.46 PM.png>) 
+
+this place you can left empty
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.00.00 PM.png>) 
+
+and choose "No" here
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.04.43 PM.png>) 
+
+here if there is any checked software just unmark it and continue..
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.06.18 PM.png>) 
+
+here click yes to install "GRUB boot loader" 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.08.12 PM.png>) 
+
+choose your VBOX HARDDISK
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.08.27 PM.png>) 
+
+and reboot out machine to finish installation 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.16.56 PM.png>) 
+
+# STEP 6 SET UP OUR VIRTUALMACHINE
+
+here you have to type password to unlock your disk
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.18.20 PM.png>) 
+
+and after that you should type your intra as user, and your password for user
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 3.19.45 PM.png>) 
+
+when you are in type 'su' for going to 'root' to have all permissions for your VM, and after that type
+```
+apt install sudo
+```
+for installing sudo on your VM
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.04.08 PM.png>) 
+
+after it finishes type 
+
+```
+sudo reboot
+```
+for apply changes
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.05.59 PM.png>) 
+
+after reboot you have to type password again, go to your user , and type 'su' for going on your root, and you have to do that each times you open your VM
+
+after that you have to make user wich one have your intraname as name,
+```
+sudo adduser btvildia
+```
+but probably you already have this user, so next you have to make group named 'user42'
+```
+sudo addgroup user42
+```
+and you have to add your 'btvildia' user to group named 'user42'
+```
+sudo adduser btvildia user42
+```
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.19.27 PM.png>) 
+
+next we have to install 'openssh-server' and 'vim'
+so for start 
+```
+sudo apt update
+```
+for update system
+```
+sudo apt install openssh-server
+```
+for install 'openssh-server'
+
+```
+sudo apt install vim
+```
+for install vim (text editor)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.24.25 PM.png>) 
+
+next we have to find directory where we have 'etc'
+and type 
+```
+vim etc/ssh/ssh_config
+```
+for editing some standart ssh configuration files
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.36.25 PM.png>) 
+
+so here we have to uncomment 'port' and replace number with 4242,
+
+so for savin this file you have to press 'esc' after finish editing, next type ':' with your keyboard, afther that type 'wq' and press 'enter'
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.43.13 PM.png>) 
+
+nex we have to edit other file also, so type this
+```
+vim etc/ssh/sshd_config
+```
+and remember this are different files we edit "ssh_config" and "sshd_confid"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.50.52 PM.png>) 
+
+here you also have to uncomment and change port to 4242, and uncomment PermitRootLogin, for saving use similar method as previous
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 4.58.50 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 5.03.39 PM.png>) 
+
+now for checking your ssh status type
+```
+sudo service ssh status
+```
+it should be "active (running)" and port should be set on 4242
+![Alt text](<Photos/Screen Shot 2024-01-15 at 5.03.39 PM.png>)
+
+now we have to install and make active UFW(Uncomplicated firewall) so we have to run this commands
+```
+sudo apt install ufw
+```
+for installing UFW
+```
+sudo ufw enable
+```
+for enable your firewall
+```
+sudo ufw allow 4242
+```
+to allow UFW on 4242 port
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.08.16 PM.png>) 
+
+and 
+```
+sudo ufw status
+```
+for check if your ufw is active on your ports
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.09.34 PM.png>) 
+
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.16.15 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.24.20 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.25.36 PM.png>) 

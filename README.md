@@ -281,6 +281,4 @@ so follow steps carefully
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.38.39 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.39.25 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.40.09 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 3.03.49 PM.png>) 
-
 

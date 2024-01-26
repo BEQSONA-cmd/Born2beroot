@@ -460,9 +460,29 @@ sudo ufw status
 for check if your ufw is active on your ports
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.09.34 PM.png>) 
 
-
+nex we have to configure sudo policies
+```
+mkdir /var/log/sudo
+```
+for create directory
+```
+touch /etc/sudoers.d/sudo_config
+```
+for create configuration file
+```
+vim /etc/sudoers.d/sudo_config
+```
+and this for edit our config file
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.16.15 PM.png>) 
+
+for how many password try we have.
+for mesaage when password fails.
+for show where the log file has to be saved in.
+for "The TTY mode has to be enabled for security reasons".
+for the paths that can be used by sudo must be restricted.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.24.20 PM.png>) 
+
+for setup passsword policy we have to edit this file
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.25.36 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.26.46 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.32.00 PM.png>) 

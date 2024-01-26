@@ -843,6 +843,6 @@ In this project, I will not show you how to install aditional service for WordPr
 So you have to deal this problem only with yourself.
 
 Oh, by the way, I have some good suggestions of aditional servics :
-1 = FTP:
-2 = Fail2ban:
-3 = OpenLiteSpeed:
+(1)FTP:
+(2)Fail2ban:
+(3)OpenLiteSpeed:

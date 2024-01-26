@@ -670,15 +670,51 @@ sudo ufw status
 ```
 for check if your ufw is active on your ports
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
+# and dont forget to add new port '80' on your VM:
+as we did here [(HERE)](https://github.com/BEQSONA-cmd/Born2beroot?tab=readme-ov-file#add-port)
 
-now 
+
+now we install "wget" and "zip" for installing Wordpress
+```
+sudo apt install wget zip
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.49.27 PM.png>) 
+
+next we have to go correct directory
+```
+cd /var/www/
+```
+and get lastes version of wordpres with this:
+```
+sudo wget https://wordpress.org/latest.zip
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.54.35 PM.png>) 
 
-
+fitst we have to unzip it:
+```
+sudo unzip latest-en_US.zip
+```
+next we have to change name of our old html directory to use new one:
+```
+sudo mv html html1
+```
+and make our wordpress to standart html directory:
+```
+sudo mv wordpress html
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.00.39 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.09 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.53 PM.png>) 
+
+
+```
+sudo chmod -R 755 html
+```
+```
+sudo apt install mariadb-server
+```
+
+```
+sudo mysql_secure_installation
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.03.53 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.08.59 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.11 PM.png>) 

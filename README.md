@@ -704,35 +704,145 @@ sudo mv wordpress html
 ```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.00.39 PM.png>) 
 
-
+now we have to type this to give out html directory some permissions
 ```
 sudo chmod -R 755 html
 ```
+and for installing mariadb packages type this:
 ```
 sudo apt install mariadb-server
 ```
-
+and isnstall mysql:
 ```
 sudo mysql_secure_installation
 ```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.03.53 PM.png>) 
+
+
+Switch to unix_socket autentication?  [N]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.08.59 PM.png>) 
+
+
+Change the root password?  [N]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.11 PM.png>) 
+
+
+Remove anonymous users?  [Y]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.22 PM.png>) 
+
+
+Disallow root login remotely?  [Y]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.33 PM.png>) 
+
+
+Remove test database and acces to it?  [Y]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.45 PM.png>) 
+
+
+Reaload privilege tables now?  [Y]
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.09.55 PM.png>) 
+
+now everything is installed and lets run mariadb for make our database and user for this database
+```
+mariadb
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.15.23 PM.png>) 
+
+for create database type "CREATE DATABASE" and name of database:
+```
+CREATE DATABASE wp_database;
+```
+for create user in that database type:
+```
+CREATE USER 'btvildia'@'localhost' IDENTIFIED BY '12345';
+```
+and for giving that user new user necessary permissions:
+```
+GRANT ALL PRIVILEGES ON wp_database.* TO 'btvildia'@'localhost';
+```
+typing this we will se all the databases and if our database is also there it means everything is correct:
+```
+SHOW DATABASES;
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.19.22 PM.png>) 
+
+next type:
+```
+FLUSH PRIVILEGES;
+```
+for update permissions wich we change.
+and for exit type 
+```
+exit
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.21.33 PM.png>) 
+
+now you have to install packages for PHP to connect to  a mysql database:
+```
+sudo apt install php-cgi php-mysql
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.24.17 PM.png>) 
+
+next we have to configure our php configuration file
+so first we have to go in html directory:
+```
+cd && cd .. && cd /var/www/html
+```
+nex we gonna copy wp-config-sample.php , to have backup also :)
+```
+cp wp-config-sample.php wp-config.php
+```
+and next we gonna open in vim our PHP file 
+```
+vim wp-config.php
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.32.11 PM.png>) 
+
+next you have to change this three places with initials you give during creating databases:
+you can do similar as here, but with your intra and password:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.33.40 PM.png>) 
+
+for good perfomance in apps on server type this:
+```
+sudo lighty-enable-mod fastcgi
+```
+for good perfomance in apps(based on php) on server type this:
+```
+sudo lighty-enable-mod fastcgi-php
+```
+for apply changes:
+```
+sudo service lighttpd force-reload
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.36.08 PM.png>) 
+
+next open your browser and type:
+```
+localhost
+```
+and fill page the same way as in picture (but, based on your intra and initials, NOT EXACTLY same you idiot !)
+
+and click "Install Wordpress"
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.38.39 PM.png>) 
+
+next you just have to log in:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.39.25 PM.png>) 
+
+and put your username and password witch you did during installation website:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.40.09 PM.png>) 
+#  ↑ ↑ with finishing that we already get (120)
 
+# STEP 10: CONGRATULATIONS YOU WERE DECEIVED 
+In this project, I will not show you how to install aditional service for WordPress
+So you have to deal this problem only with yourself.
 
-
-
+Oh, by the way, I have some good suggestions of aditional servics :
+1 = FTP:
+2 = Fail2ban:
+3 = OpenLiteSpeed:

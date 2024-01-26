@@ -482,10 +482,15 @@ and this for edit our config file
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.16.15 PM.png>) 
 
 for how many password try we have.
+
 for mesaage when password fails.
+
 for show where the log file has to be saved in.
+
 for "The TTY mode has to be enabled for security reasons".
+
 for the paths that can be used by sudo must be restricted.
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.24.20 PM.png>) 
 
 for setup passsword policy you have to edit this file
@@ -503,14 +508,23 @@ and add this commands after "pam_pwquality.so"
 minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
 ```
 for minimun characters password should have.
+
 for password should have capital letter.
+
 for password should have lowercase letter.
+
 for password should have digit.
+
 for password should not have 3 same character.
+
 for password should not have username inside.
+
 for password can not have the same character repited three contiusly times.
+
 for password should have 7 different character from last password.
+
 for implement this policy to root.
+
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.38.38 PM.png>) 
 
 next:
@@ -527,19 +541,27 @@ for shutdown :)
 # STEP 7 SET UP SSH CONNTECTION
 
 now we have to add port 4242 to out VM
+
 so follow steps:
+
 open settings,
+
 go to Network,
+
 go to Advanced,
+
 and Port Forwarding.
+
 # add port
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.41.55 PM.png>) 
 
 click "+" icon on top right corner
+
 and type 4242 in "Host Port" and "Guest Port"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.43.15 PM.png>) 
 
 next when you start your VM you can connect via ssh from your shell.
+
 so start your VM:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.46.29 PM.png>) 
 
@@ -557,6 +579,7 @@ and next type "Yes"
 # STEP 8 SET UP MONITORING
 
 now we can continue using VM from our shell, 
+
 so type:
 ```
 su
@@ -565,7 +588,9 @@ for go to sudoers.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 6.23.23 PM.png>) 
 
 we have to make file named "Monitoring.sh" (from subject)
+
 and edit this file to show us all the info they are asking in subject.
+
 so create file:
 ```
 touch monitoring.sh
@@ -638,6 +663,7 @@ it should show you information of system like that:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 7.00.29 PM.png>) 
 
 no we have to make our monitoring to run in every 10 min.
+
 so we have to edit "crontab"
 ```
 sudo crontab -u root -e
@@ -654,6 +680,7 @@ so our VM and firsr part of bonus is already done.
 
 # STEP 9 SET UP WORDPRESS AND WORDPRESS WEBSITE
 but if you want to do second part also follow next steps:
+
 first we have to install : "lighttpd"
 ```
 sudo apt install lighttpd
@@ -777,6 +804,7 @@ next type:
 FLUSH PRIVILEGES;
 ```
 for update permissions wich we change.
+
 and for exit type 
 ```
 exit
@@ -790,6 +818,7 @@ sudo apt install php-cgi php-mysql
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.24.17 PM.png>) 
 
 next we have to configure our php configuration file
+
 so first we have to go in html directory:
 ```
 cd && cd .. && cd /var/www/html
@@ -805,6 +834,7 @@ vim wp-config.php
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.32.11 PM.png>) 
 
 next you have to change this three places with initials you give during creating databases:
+
 you can do similar as here, but with your intra and password:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.33.40 PM.png>) 
 
@@ -843,6 +873,9 @@ In this project, I will not show you how to install aditional service for WordPr
 So you have to deal this problem only with yourself.
 
 Oh, by the way, I have some good suggestions of aditional servics :
-(1)FTP:
-(2)Fail2ban:
-(3)OpenLiteSpeed:
+
+1. FTP:
+
+2. Fail2ban:
+
+3. OpenLiteSpeed:

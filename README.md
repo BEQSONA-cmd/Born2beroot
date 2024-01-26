@@ -532,6 +532,7 @@ open settings,
 go to Network,
 go to Advanced,
 and Port Forwarding.
+# add port
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.41.55 PM.png>) 
 
 click "+" icon on top right corner
@@ -653,12 +654,24 @@ so our VM and firsr part of bonus is already done.
 
 # STEP 9 SET UP WORDPRESS AND WORDPRESS WEBSITE
 but if you want to do second part also follow next steps:
-
+first we have to install : "lighttpd"
+```
+sudo apt install lighttpd
+```
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.41.01 PM.png>) 
 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.41.01 PM.png>) 
+and allow anoter port to '80'
+```
+sudo ufw allow 80
+```
+and 
+```
+sudo ufw status
+```
+for check if your ufw is active on your ports
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
+
+now 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.49.27 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 12.54.35 PM.png>) 
 

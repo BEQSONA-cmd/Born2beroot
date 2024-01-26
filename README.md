@@ -653,6 +653,16 @@ so our VM and firsr part of bonus is already done.
 
 # STEP 9 SET UP WORDPRESS AND WORDPRESS WEBSITE
 but if you want to do second part also follow next steps:
+
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.41.01 PM.png>) 
+
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.41.01 PM.png>) 
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.47.34 PM.png>) 
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.49.27 PM.png>) 
+![Alt text](<Photos/Screen Shot 2024-01-16 at 12.54.35 PM.png>) 
+
+
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.00.39 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.09 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.53 PM.png>) 
@@ -673,4 +683,7 @@ but if you want to do second part also follow next steps:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.38.39 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.39.25 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.40.09 PM.png>) 
+
+
+
 

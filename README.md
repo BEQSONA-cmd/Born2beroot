@@ -460,6 +460,12 @@ sudo ufw status
 for check if your ufw is active on your ports
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.09.34 PM.png>) 
 
+and we also have to instal per_package modules for password from here
+```
+sudo apt install libpam-pwquality
+```
+![Alt text](<Photos/Screen Shot 2024-01-15 at 5.32.00 PM.png>) 
+
 nex we have to configure sudo policies
 ```
 mkdir /var/log/sudo
@@ -482,23 +488,171 @@ for "The TTY mode has to be enabled for security reasons".
 for the paths that can be used by sudo must be restricted.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.24.20 PM.png>) 
 
-for setup passsword policy we have to edit this file
+for setup passsword policy you have to edit this file
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.25.36 PM.png>) 
+
+and change this numbers as in picture
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.26.46 PM.png>) 
-![Alt text](<Photos/Screen Shot 2024-01-15 at 5.32.00 PM.png>) 
+
+for edit you have to open this file :
+```
+vim /etc/pam.d/common-password
+```
+and add this commands after "pam_pwquality.so" 
+```
+minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
+```
+for minimun characters password should have.
+for password should have capital letter.
+for password should have lowercase letter.
+for password should have digit.
+for password should not have 3 same character.
+for password should not have username inside.
+for password can not have the same character repited three contiusly times.
+for password should have 7 different character from last password.
+for implement this policy to root.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.38.38 PM.png>) 
+
+next:
+```
+sudo apt update
+```
+for update system and 
+```
+sudo shutdown now
+```
+for shutdown :)
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.40.19 PM.png>) 
+
+# STEP 7 SET UP SSH CONNTECTION
+
+now we have to add port 4242 to out VM
+so follow steps:
+open settings,
+go to Network,
+go to Advanced,
+and Port Forwarding.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.41.55 PM.png>) 
+
+click "+" icon on top right corner
+and type 4242 in "Host Port" and "Guest Port"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.43.15 PM.png>) 
+
+next when you start your VM you can connect via ssh from your shell.
+so start your VM:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.46.29 PM.png>) 
+
+and open shell
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 5.49.58 PM.png>) 
+
+when shell is open type:
+```
+ssh yourintra@localhost -p 4242
+```
+to connect.
+and next type "Yes"
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 6.20.33 PM.png>) 
+
+# STEP 8 SET UP MONITORING
+
+now we can continue using VM from our shell, 
+so type:
+```
+su
+```
+for go to sudoers.
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 6.23.23 PM.png>) 
+
+we have to make file named "Monitoring.sh" (from subject)
+and edit this file to show us all the info they are asking in subject.
+so create file:
+```
+touch monitoring.sh
+```
+and start editing:
+```
+vim monitoring.sh
+```
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 6.26.26 PM.png>) 
+
+so here is all commands for all the info what we want our monitoring to show us.
+
+```
+info=$(uname -a)
+
+cpu=$(grep "physical id" /proc/cpuinfo | wc -l)
+
+cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
+
+ruse=$(free --mega | awk '$1 == "Mem:" {print $3}')
+
+rtotal=$(free --mega | awk '$1 == "Mem:" {print $2}')
+
+rprct=$(free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+
+duse=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')
+
+dtotal=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}')
+
+dprct=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t+= $2} END {printf("%d"), disk_u/disk_t*100}')
+
+cpul=$(vmstat 1 2 | tail -1 | awk '{printf $15}')
+cpuop=$(expr 100 - $cpul)
+cpuprc=$(printf "%.1f" $cpu_op)
+
+lboot=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+
+LVM=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+
+TCP=$(ss -ta | grep ESTAB | wc -l)
+
+ulog=$(users | wc -w)
+
+ip=$(hostname -I)
+mac=$(ip link | grep "link/ether" | awk '{print $2}')
+
+SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+
+wall "	Architecture: $info
+	CPU physical: $cpu
+	vCPU: $cpuv
+	Memory Usage: $ruse/${rtotal}MB ($rprct%)
+	Disk Usage: $duse/${dtotal} ($dprct%)
+	CPU load: $cpuprc%
+	Last boot: $lboot
+	LVM use: $LVM
+	Connections TCP: $TCP ESTABLISHED
+	User log: $ulog
+	Network: IP $ip ($mac)
+	Sudo: $SUDO cmd"
+```
+and here are explenations of use each commands:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 6.32.48 PM.png>) 
+
+so after saving your monitoring, when you run:
+```
+sh monitoring.sh
+```
+it should show you information of system like that:
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 7.00.29 PM.png>) 
+
+no we have to make our monitoring to run in every 10 min.
+so we have to edit "crontab"
+```
+sudo crontab -u root -e
+```
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 7.01.35 PM.png>) 
+
+and add this script at the end
+```
+*/10 * * * * sh /ruta del script
+```
 ![Alt text](<Photos/Screen Shot 2024-01-15 at 7.13.59 PM.png>) 
+#  ↑ ↑ with finishing that we already get (110)
+so our VM and firsr part of bonus is already done.
+
+# STEP 9 SET UP WORDPRESS AND WORDPRESS WEBSITE
+but if you want to do second part also follow next steps:
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.00.39 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.09 PM.png>) 
 ![Alt text](<Photos/Screen Shot 2024-01-16 at 1.01.53 PM.png>) 
